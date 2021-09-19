@@ -63,7 +63,6 @@ def convert(hsv_hue):
     current = os.getcwd()
     images_input = os.listdir(current+"/input")
 
-    print("Input a value from 0-360 for the hsv hue change value")
     print("Starting the conversion...")
     tic = time.perf_counter()
 

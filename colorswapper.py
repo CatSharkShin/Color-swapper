@@ -1,5 +1,3 @@
-
-
 from PIL import Image
 import numpy as np
 import yaml,os,shutil,sys,subprocess

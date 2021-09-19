@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import colorchooser
-from PIL import Image,ImageTk
+from PIL import Image,ImageTk,ImageFile
 import importlib
 import colorswapper as cs
 import numpy as np
@@ -25,7 +25,7 @@ class MainWindow():
 		print(self.last_image)
 		arr = np.array(read_image)
 		# HUE SHIFT
-		read_image = Image.fromarray(cs.shift_hue(arr,self.hue), 'RGBA')
+		read_image = Image.fromarray(cs.shift_hue(arr,self.hue), 'RGB')
 		self.image_to_show = ImageTk.PhotoImage(read_image)
 		self.image_on_canvas = self.canvas.create_image(0,0,anchor=NW, image = self.image_to_show)
 		
@@ -81,7 +81,6 @@ class MainWindow():
 
 	def show_random_image(self):
 		canvas.itemconfig(root.image_on_canvas, image = random_image())
-
 
 current = os.getcwd()
 images_input = os.listdir(current+"/input")
